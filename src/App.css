@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #0f0f0f;
+}
+
+html,
+body {
+  font-family: "PP Monument Extended";
+  /* background: #fff; */
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.logo,
+.nav-item {
+  padding: 1.5em;
+  font-weight: 400;
+}
+
+/* h1 {
+  width: 80%;
+  position: absolute;
+  top: 47.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-weight: 900;
+  font-size: 10vw;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.05em;
+} */
+
+a {
+  font-family: "PP Supply Mono";
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/** transition start **/
+.blocks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.row {
+  flex: 1;
+  width: 100%;
+  display: flex;
+}
+
+.block {
+  position: relative;
+  flex: 1;
+  background: #667067;
+  margin: -0.25px;
+}
+
+.transition-in .block {
+  transform-origin: top;
+}
+
+.transition-out .block {
+  transform-origin: bottom;
+}
+/** transition end **/
+
+/** carousel start **/
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel-images,
+.carousel-image .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-images .img {
+  will-change: clip-path;
+}
+.carousel-images .img img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.carousel-images {
+  opacity: 0.85;
+}
+
+.slide-title-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.slide-title-container .title {
+  position: relative;
+  text-align: center;
+  filter: url(#blur-matrix) blur(0.25px);
+  --webkit-filter: url(#blur-matrix) blur(0.25px);
+  z-index: 2;
+}
+
+.slide-title-container .title .word {
+  filter: blur(75px);
+  --webkit-filter: blur(75px);
+  will-change: filter, opacity;
+  opacity: 0;
+}
+
+.slider-controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.control-btn {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 0.075rem dashed rgba(255, 255, 255, 0.75);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.control-btn:hover {
+  background-color: #fff;
+}
+
+.control-btn svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: #000;
+  transition: fill 200ms ease-in-out;
+}
+
+.control-btn:hover svg {
+  fill: #000;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .slide-title-container {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .slider-controls {
+    top: 65%;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .control-btn {
+    padding: 1rem;
+  }
+
+  .control-btn svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+/** carousel end **/
