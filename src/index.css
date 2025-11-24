@@ -115,4 +115,9 @@
     font-size: 13px;
     font-weight: 400;
   }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
