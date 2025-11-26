@@ -7,7 +7,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import ButtonGroup from "@/components/ButtonGroup";
+import ButtonGroup from "@/components/ui/demo/ButtonGroup";
+import { FieldDemo } from "@/components/ui/demo/form/file";
+import { CardDemo } from "@/components/ui/demo/form/card";
+
+import { AnimatedTestimonialsDemo } from "@/components/ui/demo/AnimatedTestimonialsDemo";
+import { AnimatedTooltipPreview } from "@/components/ui/demo/AnimatedTooltipPreview";
+import { TypewriterEffectSmoothDemo } from "@/components/ui/demo/TypewriterEffectSmoothDemo";
+import { InfiniteMovingCardsDemo } from "@/components/ui/demo/InfiniteMovingCardsDemo";
+
+import { MarqueeDemo } from "@/components/ui/demo/MarqueeDemo";
+import { BentoDemo } from "@/components/ui/demo/BentoDemo";
 
 import { ArrowUpIcon } from "lucide-react";
 
@@ -87,6 +97,27 @@ const Home = Transition(() => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
+          <FieldDemo />
+
+          <CardDemo />
+
+          <div className="mt-10 flex flex-col gap-4">
+            <h1 className="text-4xl text-fuchsia-700">ui.aceternity</h1>
+            <AnimatedTestimonialsDemo />
+
+            <AnimatedTooltipPreview />
+
+            <TypewriterEffectSmoothDemo />
+
+            <InfiniteMovingCardsDemo />
+          </div>
+
+          <div className="mt-10 flex flex-col gap-4">
+            <h1 className="text-4xl text-fuchsia-700">Magic UI</h1>
+            <MarqueeDemo />
+            <BentoDemo />
+          </div>
         </div>
       </div>
     </div>
